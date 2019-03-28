@@ -3,6 +3,7 @@
 namespace Ops\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Ops\Services\OpsService;
 
 class OpsServiceProvider extends ServiceProvider
 {
@@ -30,9 +31,11 @@ class OpsServiceProvider extends ServiceProvider
         }
 
         $this->app->singleton('ops', function ($app) {
-            return new DingHelper(
+            return new OpsService(
                 config('ops.app_id'),
-                config('ops.secret_key')
+                config('ops.secret_key'),
+                config('ops.api_uri'),
+                config('ops.service_uri')
             );
         });
     }

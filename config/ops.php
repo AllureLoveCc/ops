@@ -6,4 +6,6 @@ return [
     'white_list_enable' => env('WHITE_LIST_ENABLE', false), // 白名单开关
     'app_id' => env('OPS_APP_ID', ''), // app_id
     'secret_key' => env('OPS_SECRET_KEY', ''), // 对应的secret_key
+    'api_uri' => env('OPS_API_URI', ''), // api_uri
+    'service_uri' => env('OPS_SERVICE_URI', ''), // service_uri
 ];

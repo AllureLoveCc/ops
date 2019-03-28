@@ -15,12 +15,12 @@ class BaseClientService
     /**
      * @var string
      */
-    protected $apiUri = 'http://api.service.100tal.com';
+    protected $apiUri;
 
     /**
      * @var string
      */
-    protected $serviceUri = 'http://service.100tal.com';
+    protected $serviceUri;
 
     /**
      * @var string
