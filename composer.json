@@ -1,0 +1,19 @@
+{
+    "name": "cc/ops",
+    "description": "造物神 Client API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Cen",
+            "email": "15738518823@163.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    },
+    "autoload":{
+        "psr-4": {
+            "Ops\\": "src/"
+        }
+    }
+}
