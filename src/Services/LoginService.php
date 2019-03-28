@@ -2,8 +2,6 @@
 
 namespace Ops\Services;
 
-use GuzzleHttp\Client;
-
 trait LoginService
 {
 
@@ -20,7 +18,6 @@ trait LoginService
         ];
 
         $uri = '/sso/verify?' . http_build_query($query);
-        /** @var Client $client */
         $response = $this->client->get($uri);
 
         return $this->response($response);
