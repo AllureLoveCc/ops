@@ -3,7 +3,7 @@
 namespace Ops\Services;
 
 use GuzzleHttp\Client;
-use HttpException;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Psr\Http\Message\ResponseInterface;
 
 class BaseClientService
