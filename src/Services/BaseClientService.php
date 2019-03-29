@@ -3,6 +3,7 @@
 namespace Ops\Services;
 
 use GuzzleHttp\Client;
+use HttpException;
 use Psr\Http\Message\ResponseInterface;
 
 class BaseClientService
@@ -111,12 +112,12 @@ class BaseClientService
 
             if ($statusCode != 200) throw new \Exception($response->getBody()->getContents());
 
-            if ($result && (isset($result['errcode']) || $result['errcode'] == 0)) return $result;
+            if ($result && (!isset($result['errcode']) || $result['errcode'] == 0)) return $result;
 
-            throw new \HttpException(500, '接口调用失败');
+            throw new HttpException(500, '接口调用失败');
 
         } catch (\Exception $e) {
-            throw new \HttpException(500, $e->getMessage());
+            throw new HttpException(500, $e->getMessage());
         }
     }
 }
